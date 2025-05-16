@@ -393,22 +393,22 @@ $conn->close();
                         </div>
                         <p class="existing-supplier-hint">Start typing to see existing suppliers or enter a new supplier name</p>
                         <datalist id="existingSuppliers">
-                            <?php 
-                            // Reset the suppliers result pointer and loop through suppliers
-                            if ($result_suppliers && $result_suppliers->num_rows > 0) {
-                                $result_suppliers->data_seek(0);
-                                while ($supplier = $result_suppliers->fetch_assoc()) {
-                                    echo '<option value="' . htmlspecialchars($supplier['supplier_name']) . '" 
-                                        data-contact="' . htmlspecialchars($supplier['contact_person']) . '" 
-                                        data-email="' . htmlspecialchars($supplier['email']) . '" 
-                                        data-phone="' . htmlspecialchars($supplier['phone']) . '" 
-                                        data-address="' . htmlspecialchars($supplier['address']) . '" 
-                                        data-terms="' . htmlspecialchars($supplier['payment_terms']) . '"
-                                        data-notes="' . htmlspecialchars($supplier['notes']) . '"></option>';
-                                }
-                            }
-                            ?>
-                        </datalist>
+    <?php 
+    // Reset the suppliers result pointer and loop through suppliers
+    if ($result_suppliers && $result_suppliers->num_rows > 0) {
+        $result_suppliers->data_seek(0);
+        while ($supplier = $result_suppliers->fetch_assoc()) {
+            echo '<option value="' . htmlspecialchars($supplier['supplier_name']) . '" 
+                data-contact="' . htmlspecialchars($supplier['contact_person']) . '" 
+                data-email="' . htmlspecialchars($supplier['email']) . '" 
+                data-phone="' . htmlspecialchars($supplier['phone']) . '" 
+                data-address="' . htmlspecialchars($supplier['address']) . '" 
+                data-terms="' . htmlspecialchars($supplier['payment_terms']) . '"
+                data-notes="' . htmlspecialchars($supplier['notes']) . '"></option>';
+        }
+    }
+    ?>
+</datalist>
                     </div>
                     <div class="form-group">
                         <label for="contact_person">Contact Person:</label>
