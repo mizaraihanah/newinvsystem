@@ -27,6 +27,7 @@ function handleSupplierAutofill() {
         document.getElementById('phone').value = matchedOption.getAttribute('data-phone') || '';
         document.getElementById('address').value = matchedOption.getAttribute('data-address') || '';
         document.getElementById('payment_terms').value = matchedOption.getAttribute('data-terms') || '';
+        document.getElementById('notes').value = matchedOption.getAttribute('data-notes') || '';
         
         // Show a toast notification
         showToast('Supplier details auto-filled. You can modify them if needed.', 'success');
@@ -44,7 +45,9 @@ function handleSupplierAutofill() {
             }, 3000);
         }
     }
-}/**
+}
+
+/**
  * Staff Suppliers Management JavaScript
  * Handles functionality for the supplier management interface
  */
